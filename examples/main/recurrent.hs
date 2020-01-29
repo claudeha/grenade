@@ -9,12 +9,12 @@
 import           Control.Monad ( foldM )
 import           Control.Monad.Random ( MonadRandom, getRandomR )
 
-#if __GLASGOW_HASKELL__ < 800
+#if MIN_VERSION_base(4,13,0)
 import           Data.List ( unfoldr )
 #else
 import           Data.List ( cycle, unfoldr )
-#endif
 import           Data.Semigroup ( (<>) )
+#endif
 
 import qualified Numeric.LinearAlgebra.Static as SA
 
